@@ -1,29 +1,29 @@
 {
-    "posts":[
-        {
-            "id": "1",
-            "title": "Post One",
-            "body": "This is the post body",
-            "publishedAt": "10-01-1996"
-        },
-        {
-            "id": "2",
-            "title": "Post Two",
-            "body": "This is the post body Twp",
-            "publishedAt": "10-01-2022"
-        },
-        {
-            "id": "3",
-            "title": "Post Three",
-            "body": "This is the post body Three",
-            "publishedAt": "10-01-2026"
-        }
-    ],
-    "users":[
-        {
-            "id": "1",
-            "name": "John Doe",
-            "email": "blckclov3r@gmail.com"
-        }
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "Post One",
+      "body": "This is the post body",
+      "publishedAt": "2038-01-19 03:14:07"
+    },
+    {
+      "id": "2",
+      "title": "Post Two",
+      "body": "This is the post body Three",
+      "publishedAt": "10-01-2021"
+    },
+    {
+      "id": "3",
+      "title": "Post Three",
+      "body": "This is the post body Three",
+      "publishedAt": "10-01-2026"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "blckclov3r@gmail.com"
+    }
+  ]
 }
