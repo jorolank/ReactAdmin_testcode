@@ -1,49 +1,72 @@
 {
   "posts": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Post One",
-      "body": "This is the post body",
+      "body": "Post One12",
       "publishedAt": "2038-01-19 03:14:07",
-      "status": true,
-      "usersId": 1
-      
+      "status": false,
+      "userId": "2"
     },
     {
-      "id": "2",
-      "title": "Post Two",
+      "id": 2,
+      "title": "Post Two22",
       "body": "This is the post body Three",
       "publishedAt": "10-01-2021",
       "status": false,
-      "usersId": 2
+      "userId": "2"
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Post Three",
       "body": "This is the post body Three",
       "publishedAt": "10-01-2026",
       "status": true,
-      "usersId": 3
+      "userId": "3"
     },
     {
-      "id": "4",
-      "title": "Post Three",
+      "id": 4,
+      "title": "Post Three1",
       "body": "This is the post body Three",
       "publishedAt": "10-01-2026",
       "status": true,
-      "usersId": 4
+      "userId": "4"
+    },
+    {
+      "userId": "4",
+      "title": "Tst",
+      "body": "12312",
+      "status": true,
+      "id": 5
+    },
+    {
+      "userId": "2",
+      "title": "dfsdf",
+      "body": "232",
+      "status": true,
+      "id": 6
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "blckclov3r@gmail.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Aljun",
       "email": "aljun@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Ellen",
+      "email": "Ellen@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Lorem Ipsum",
+      "email": "Lorem@gmail.com"
     }
   ]
 }
