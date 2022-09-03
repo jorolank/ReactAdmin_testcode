@@ -4,26 +4,46 @@
       "id": "1",
       "title": "Post One",
       "body": "This is the post body",
-      "publishedAt": "2038-01-19 03:14:07"
+      "publishedAt": "2038-01-19 03:14:07",
+      "status": true,
+      "usersId": 1
+      
     },
     {
       "id": "2",
       "title": "Post Two",
       "body": "This is the post body Three",
-      "publishedAt": "10-01-2021"
+      "publishedAt": "10-01-2021",
+      "status": false,
+      "usersId": 2
     },
     {
       "id": "3",
       "title": "Post Three",
       "body": "This is the post body Three",
-      "publishedAt": "10-01-2026"
+      "publishedAt": "10-01-2026",
+      "status": true,
+      "usersId": 3
+    },
+    {
+      "id": "4",
+      "title": "Post Three",
+      "body": "This is the post body Three",
+      "publishedAt": "10-01-2026",
+      "status": true,
+      "usersId": 4
     }
   ],
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "John Doe",
       "email": "blckclov3r@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Aljun",
+      "email": "aljun@gmail.com"
     }
   ]
 }

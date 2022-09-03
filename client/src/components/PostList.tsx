@@ -1,15 +1,21 @@
 import {FC} from 'react'
-import {List, Datagrid, TextField, EditButton, DeleteButton} from 'react-admin'
+import {List, Datagrid, TextField, EditButton, DeleteButton, useRecordContext, ReferenceField} from 'react-admin'
 
-const PostList: FC = (props: any) =>{
+const MyUrlField = ({source}:any) =>{
+    const record = useRecordContext();
+    return record ? (<a href={`/user/${record.id}`}>{record.status.toString()}</a>) : null
+}
+
+const PostList: FC = (props: any) => {
     return (
         <List {...props}>
-            <Datagrid>
+            <Datagrid rowClick={"edit"}>
+                <ReferenceField source="usersId" reference="users" />
                 <TextField source='id'/>
                 <TextField source='title'/>
                 <TextField source='publishedAt'/>
-                <EditButton {...props} basePath='/posts' />
-                <DeleteButton {...props} basePath='/posts' />
+                <MyUrlField soruce='status'   />
+                <DeleteButton {...props}  />
             </Datagrid>
         </List>
     )
