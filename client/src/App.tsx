@@ -8,6 +8,8 @@ import PostEdit from './components/PostEdit';
 import PostCreate from './components/PostCreate';
 import PostIcon from '@mui/icons-material/Book';
 import UserIcon from '@mui/icons-material/Group';
+import Dashboard from './components/Dashboard';
+import AuthProvider from './components/AuthProvider';
 
 /* 
  youtube url: https://www.youtube.com/watch?v=HRmdj-HpJyE
@@ -17,7 +19,7 @@ import UserIcon from '@mui/icons-material/Group';
 const App: FC = () => {
   const dataProvider = jsonServerProvider('http://127.0.0.1:5000');
   return (
-    <Admin dataProvider={dataProvider}>
+    <Admin authProvider={AuthProvider} dataProvider={dataProvider} dashboard={Dashboard}>
         {/* <Resource name="posts" list={ListGuesser} /> */}
         {/* <Resource name="posts" list={PostList} edit={EditGuesser} /> */}
         <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
