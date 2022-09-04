@@ -2,7 +2,7 @@
   "posts": [
     {
       "like": false,
-      "dislike": false,
+      "dislike": true,
       "id": 1,
       "userId": "3",
       "title": "This is title",
@@ -10,8 +10,8 @@
       "publishedAt": "2022-09-29"
     },
     {
-      "like": true,
-      "dislike": false,
+      "like": false,
+      "dislike": true,
       "id": 2,
       "userId": "1",
       "title": "Test",
@@ -20,7 +20,7 @@
     },
     {
       "like": false,
-      "dislike": false,
+      "dislike": true,
       "id": 3,
       "userId": "3",
       "title": "Test3333",

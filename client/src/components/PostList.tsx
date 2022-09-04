@@ -18,42 +18,76 @@ const postFilters = [
   <ReferenceInput source="userId" label="User" reference="users" />,
 ];
 
-const SubscriptionBtnField = ({ source }: any) => {
+const LikeField = ({ source }: any) => {
   const record = useRecordContext();
   const likeObj = {
     like:  !record.like,
-    dislike: record.dislike,
+    dislike: record.like,
     id: record.id,
     userId: record.userId,
     title: record.title,
     body: record.body,
     publishedAt: record.publishedAt
   };
+
+  const [update, { isLoading }] = useUpdate("posts", {
+    id: record.id,
+    data: likeObj,
+    previousData: record
+  });
+
+  const handleClick = () => {
+
+    update();
+  };
+
+  return record ? (
+    <Button variant="contained" color="secondary" onClick={handleClick} disabled={isLoading}>
+        {record.like?.toString()}
+    </Button>
+  ) : null
+};
+
+interface recordType{
+  dislike: boolean | JSX.Element
+  like:  boolean  | JSX.Element
+  id: string
+  userId: string
+  title: string
+  body: string
+  publishedAt: string
+}
+
+const DislikeField = ({ source }: any) => {
+  const record: recordType = useRecordContext();
+
   const dislikeObj = {
-    like:  record.like,
     dislike: !record.dislike,
+    like:  record.dislike,
     id: record.id,
     userId: record.userId,
     title: record.title,
     body: record.body,
     publishedAt: record.publishedAt
   }
+
   const [update, { isLoading }] = useUpdate("posts", {
     id: record.id,
-    data: source === "like" ? likeObj : dislikeObj,
-    previousData: record,
+    data: dislikeObj,
+    previousData: record
   });
+
   const handleClick = () => {
     update();
   };
+
   return record ? (
-    <Button variant="contained" onClick={handleClick} disabled={isLoading}>
-        {  source === "like" ? record.like.toString() : record.dislike.toString()}
+    <Button variant="contained" color="secondary" onClick={handleClick} disabled={isLoading}>
+        //@ts-ignore
+        {record.dislike ? "true" : "false"}
     </Button>
-  ) : null;
+  ) : null
 };
-
-
 
 const CustomEditButton = ({ source }: any) => {
   const record = useRecordContext();
@@ -74,8 +108,8 @@ const PostList: FC = () => {
         <TextField source="body" />
         <TextField source="publishedAt" />
 
-        <SubscriptionBtnField source="like" label="Subscription" />
-        {/* <SubscriptionBtnField source="dislike" /> */}
+        <LikeField source="like" label="subscription" />
+        <DislikeField source="dislike" label="subscription"  /> 
 
         <CustomEditButton   />
         <DeleteButton  />
