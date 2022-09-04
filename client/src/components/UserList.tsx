@@ -2,14 +2,14 @@ import { FC } from "react";
 import { Datagrid, EditButton, List, TextField } from "react-admin";
 
 
-const UserList:FC = (props: any) =>{
+const UserList:FC = () =>{
     return (
-        <List {...props}>
+        <List >
             <Datagrid>
                   <TextField source='id'/>
                   <TextField source='name'/>
                   <TextField source='email'/>
-                  <EditButton {...props}  />
+                  <EditButton   />
             </Datagrid>
         </List>
     )

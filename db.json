@@ -1,50 +1,31 @@
 {
   "posts": [
     {
+      "like": false,
+      "dislike": false,
       "id": 1,
-      "title": "Post One",
-      "body": "Post One12",
-      "publishedAt": "2038-01-19 03:14:07",
-      "status": false,
-      "userId": "2"
+      "userId": "3",
+      "title": "This is title",
+      "body": "hello",
+      "publishedAt": "2022-09-29"
     },
     {
+      "like": true,
+      "dislike": false,
       "id": 2,
-      "title": "Post Two22",
-      "body": "This is the post body Three",
-      "publishedAt": "10-01-2021",
-      "status": false,
-      "userId": "2"
+      "userId": "1",
+      "title": "Test",
+      "body": "123",
+      "publishedAt": "2022-09-04"
     },
     {
+      "like": false,
+      "dislike": false,
       "id": 3,
-      "title": "Post Three",
-      "body": "This is the post body Three",
-      "publishedAt": "10-01-2026",
-      "status": true,
-      "userId": "3"
-    },
-    {
-      "id": 4,
-      "title": "Post Three1",
-      "body": "This is the post body Three",
-      "publishedAt": "10-01-2026",
-      "status": true,
-      "userId": "4"
-    },
-    {
-      "userId": "4",
-      "title": "Tst",
-      "body": "12312",
-      "status": true,
-      "id": 5
-    },
-    {
-      "userId": "2",
-      "title": "dfsdf",
-      "body": "232",
-      "status": true,
-      "id": 6
+      "userId": "3",
+      "title": "Test3333",
+      "body": "23123",
+      "publishedAt": "2022-09-04"
     }
   ],
   "users": [

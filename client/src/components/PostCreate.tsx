@@ -1,15 +1,18 @@
 import { FC } from "react"
-import {  BooleanInput, Create, Edit, ReferenceInput, SimpleForm, TextField, TextInput } from "react-admin"
+import {  BooleanInput, Create, DateInput, Edit, ReferenceInput, SimpleForm, TextField, TextInput } from "react-admin"
 
 
-const PostCreate:FC = (props : any) =>{
+const PostCreate:FC = () =>{
+  
     return (
-        <Create {...props} redirect="list">
+        <Create  redirect="list">
             <SimpleForm >
                 <ReferenceInput source="userId" reference="users" />
                 <TextInput source="title" /> 
                 <TextInput multiline source="body" /> 
-                <BooleanInput source="status" />
+                <DateInput source="publishedAt" />
+                <BooleanInput source="like" defaultValue={true} />
+                <BooleanInput source="dislike" />
             </SimpleForm>
         </Create>
     )

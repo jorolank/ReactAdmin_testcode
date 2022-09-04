@@ -1,25 +1,36 @@
-import { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import {
+  BooleanInput,
+  DateInput,
   Edit,
   ReferenceInput,
   SimpleForm,
   TextInput,
+  useGetOne,
+  useListParams,
   useRecordContext,
 } from "react-admin";
+import { useParams } from "react-router-dom";
+const PostTitle = () => {
+  const record = useRecordContext();
+  return <span>Post {record ? `"${record.title}"` : ""}</span>;
+};
 
-const PostTitle = () =>{
-    const record = useRecordContext();
-    console.log(record)
-    return <span>Post {record ? `"${record.title}"` : ''}</span>
-}
+const PostEdit: FC = () => {
+  // const { id } = useParams();
+  // const { data, isLoading} = useGetOne("posts", { id });
+  // const [state, setState] = useState<boolean>(false);
 
-const PostEdit: FC = (props: any) => {
+  
   return (
-    <Edit {...props} title={<PostTitle />}>
+    <Edit title={<PostTitle />}>
       <SimpleForm>
+        <TextInput disabled label="Id" source="id" />
         <ReferenceInput source="userId" reference="users" />
-        <TextInput source="title" />
-        <TextInput multiline source="body" />
+        <TextInput source="title" resettable />
+        <TextInput multiline source="body" resettable />
+        <DateInput source="publishedAt" />
+      
       </SimpleForm>
     </Edit>
   );

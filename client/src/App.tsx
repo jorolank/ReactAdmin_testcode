@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
+import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import './App.css'
 import PostList from './components/PostList';
@@ -23,7 +23,7 @@ const App: FC = () => {
         {/* <Resource name="posts" list={ListGuesser} /> */}
         {/* <Resource name="posts" list={PostList} edit={EditGuesser} /> */}
         <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
-        <Resource name="users" list={UserList} recordRepresentation="name" icon={UserIcon} />
+        <Resource name="users" list={UserList} edit={EditGuesser}  recordRepresentation="name" icon={UserIcon} />
     </Admin>
   )
 }
