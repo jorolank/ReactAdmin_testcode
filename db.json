@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "like": false,
+      "dislike": false,
+      "id": 1,
+      "userId": "3",
+      "title": "This is title",
+      "body": "hello",
+      "publishedAt": "2022-09-29"
+    },
+    {
+      "like": true,
+      "dislike": false,
+      "id": 2,
+      "userId": "1",
+      "title": "Test",
+      "body": "123",
+      "publishedAt": "2022-09-04"
+    },
+    {
+      "like": false,
+      "dislike": false,
+      "id": 3,
+      "userId": "3",
+      "title": "Test3333",
+      "body": "23123",
+      "publishedAt": "2022-09-04"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "blckclov3r@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Aljun",
+      "email": "aljun@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Ellen",
+      "email": "Ellen@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Lorem Ipsum",
+      "email": "Lorem@gmail.com"
+    }
+  ]
+}
