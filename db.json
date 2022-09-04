@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "like": false,
+      "like": true,
       "dislike": false,
       "id": 1,
       "userId": "3",
@@ -10,7 +10,7 @@
       "publishedAt": "2022-09-29"
     },
     {
-      "like": true,
+      "like": false,
       "dislike": false,
       "id": 2,
       "userId": "1",

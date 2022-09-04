@@ -44,7 +44,7 @@ const SubscriptionBtnField = ({ source }: any) => {
     previousData: record,
   });
   const handleClick = () => {
-    update("posts");
+    update();
   };
   return record ? (
     <Button variant="contained" onClick={handleClick} disabled={isLoading}>
