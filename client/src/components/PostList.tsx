@@ -82,9 +82,12 @@ const DislikeField = ({ source }: any) => {
   };
 
   return record ? (
+      //@ts-ignore
     <Button variant="contained" color="secondary" onClick={handleClick} disabled={isLoading}>
-        //@ts-ignore
-        {record.dislike ? "true" : "false"}
+           //@ts-ignore
+        {
+           (record.dislike) ? true : false
+        } 
     </Button>
   ) : null
 };
@@ -109,7 +112,7 @@ const PostList: FC = () => {
         <TextField source="publishedAt" />
 
         <LikeField source="like" label="subscription" />
-        <DislikeField source="dislike" label="subscription"  /> 
+      
 
         <CustomEditButton   />
         <DeleteButton  />
