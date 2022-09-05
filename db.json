@@ -4,57 +4,57 @@
       "like": false,
       "dislike": true,
       "id": 1,
-      "userId": "3",
+      "userId": 3,
       "title": "This is title",
       "body": "hello",
-      "publishedAt": "2022-09-1 00:00:01"
+      "published_at": "2022-09-01"
     },
     {
       "like": false,
       "dislike": true,
       "id": 2,
-      "userId": "1",
+      "userId": 2,
       "title": "Test",
       "body": "123",
-      "publishedAt": "2022-09-5 00:00:01"
+      "published_at": "2022-09-05"
     },
     {
       "like": true,
       "dislike": false,
       "id": 3,
-      "userId": "3",
+      "userId": 3,
       "title": "Helloworld3",
       "body": "23123",
-      "publishedAt": "2022-09-29 00:00:01"
+      "published_at": "2022-09-29"
     },
     {
       "like": true,
       "dislike": false,
       "id": 4,
-      "userId": "3",
+      "userId": 3,
       "title": "Helloworld",
       "body": "Lorem ipsum dolor sir amit",
-      "publishedAt": "2022-09-17 00:00:01"
+      "published_at": "2022-09-17"
     }
   ],
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "John Doe",
       "email": "blckclov3r@gmail.com"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Aljun",
       "email": "aljun@gmail.com"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Ellen",
       "email": "Ellen@gmail.com"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Lorem Ipsum",
       "email": "Lorem@gmail.com"
     }

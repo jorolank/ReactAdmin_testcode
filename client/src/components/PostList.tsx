@@ -11,11 +11,17 @@ import {
   ReferenceInput,
   Button,
   useUpdate,
+  DateInput,
+  DateField,
 } from "react-admin";
 
+
 const postFilters = [
-  <TextInput source="q" label="Search" alwaysOn />,
-  <ReferenceInput source="userId" label="User" reference="users" />,
+  // <TextInput source="q" label="Search" alwaysOn />,
+  // <ReferenceInput source="userId" label="User" reference="users" />,
+  <DateInput source="published_at" label={'Published'} alwaysOn/>,
+  <DateInput source={`published_at_gte`}  alwaysOn/>,
+  <DateInput source={`published_at_lte`}  alwaysOn/>
 ];
 
 const LikeField = ({ source }: any) => {
@@ -48,49 +54,6 @@ const LikeField = ({ source }: any) => {
   ) : null
 };
 
-interface recordType{
-  dislike: boolean | JSX.Element
-  like:  boolean  | JSX.Element
-  id: string
-  userId: string
-  title: string
-  body: string
-  publishedAt: string
-}
-
-const DislikeField = ({ source }: any) => {
-  const record: recordType = useRecordContext();
-
-  const dislikeObj = {
-    dislike: !record.dislike,
-    like:  record.dislike,
-    id: record.id,
-    userId: record.userId,
-    title: record.title,
-    body: record.body,
-    publishedAt: record.publishedAt
-  }
-
-  const [update, { isLoading }] = useUpdate("posts", {
-    id: record.id,
-    data: dislikeObj,
-    previousData: record
-  });
-
-  const handleClick = () => {
-    update();
-  };
-
-  return record ? (
-      //@ts-ignore
-    <Button variant="contained" color="secondary" onClick={handleClick} disabled={isLoading}>
-           //@ts-ignore
-        {
-           (record.dislike) ? true : false
-        } 
-    </Button>
-  ) : null
-};
 
 const CustomEditButton = ({ source }: any) => {
   const record = useRecordContext();
@@ -99,9 +62,12 @@ const CustomEditButton = ({ source }: any) => {
   ) : null;
 };
 
+
 const PostList: FC = () => {
   return (
-    <List  filters={postFilters} hasCreate>
+    <List  filters={postFilters} 
+    sort={{field: 'publishedAt', order: 'DESC'}}
+    hasCreate>
       <Datagrid>
         <ReferenceField source="userId" reference="users">
           <TextField source="id" />
@@ -109,7 +75,7 @@ const PostList: FC = () => {
         <TextField source="id" />
         <TextField source="title" />
         <TextField source="body" />
-        <TextField source="publishedAt" />
+        <DateField locales={'af'}  source="published_at" showTime={false} />
 
         <LikeField source="like" label="subscription" />
       
