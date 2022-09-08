@@ -10,13 +10,13 @@
       "published_at": "2022-09-05"
     },
     {
-      "like": false,
-      "dislike": true,
+      "like": true,
+      "dislike": false,
       "id": 2,
       "userId": 2,
       "title": "Test",
       "body": "123",
-      "published_at": "2022-09-05"
+      "published_at": "2022-09-09"
     },
     {
       "like": false,
@@ -28,13 +28,22 @@
       "published_at": "2022-09-05"
     },
     {
-      "like": true,
-      "dislike": false,
+      "like": false,
+      "dislike": true,
       "id": 4,
       "userId": 3,
       "title": "Helloworld",
       "body": "Lorem ipsum dolor sir amit",
-      "published_at": "2022-09-17"
+      "published_at": "2022-09-07"
+    },
+    {
+      "like": false,
+      "dislike": true,
+      "id": 6,
+      "userId": 2,
+      "title": "fsdf",
+      "body": "dfds",
+        "published_at": "2022-09-28"
     }
   ],
   "users": [

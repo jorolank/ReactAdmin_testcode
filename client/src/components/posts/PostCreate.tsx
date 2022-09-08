@@ -10,7 +10,7 @@ const PostCreate:FC = () =>{
                 <ReferenceInput source="userId" reference="users" />
                 <TextInput source="title" /> 
                 <TextInput multiline source="body" /> 
-                <DateInput source="publishedAt" />
+                <DateInput source="published_at" />
                 <BooleanInput source="like" defaultValue={true} />
                 <BooleanInput source="dislike" />
             </SimpleForm>

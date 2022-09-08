@@ -11,15 +11,18 @@ import {
   useUpdate,
   DateInput,
   DateField,
+  ReferenceInput,
+  TextInput,
+  DeleteWithConfirmButton,
 } from "react-admin";
 
 
 const postFilters = [
-  // <TextInput source="q" label="Search" alwaysOn />,
-  // <ReferenceInput source="userId" label="User" reference="users" />,
-  <DateInput source="published_at" label={'Published'} alwaysOn/>,
-  <DateInput source={`published_at_gte`}  alwaysOn/>,
-  <DateInput source={`published_at_lte`}  alwaysOn/>
+  <TextInput source="q" label="Search" alwaysOn />,
+  <ReferenceInput source="userId" label="User" reference="users" />,
+  // <DateInput source="published_at" label={'Published'} alwaysOn/>,
+  <DateInput source={`published_at_gte`} label="start"  alwaysOn/>,
+  <DateInput source={`published_at_lte`} label="end" alwaysOn/>
 ];
 
 const LikeField = ({label} : {label: string}) => {
@@ -70,7 +73,7 @@ const PostList: FC = () => {
         <ReferenceField source="userId" reference="users">
           <TextField source="id" />
         </ReferenceField>
-        <TextField source="id" />
+        {/* <TextField source="id" /> */}
         <TextField source="title" />
         <TextField source="body" />
         <DateField locales={'af'}  source="published_at" showTime={false} />
@@ -79,7 +82,7 @@ const PostList: FC = () => {
       
 
         <CustomEditButton   />
-        <DeleteButton  />
+        <DeleteWithConfirmButton  />
       </Datagrid>
     </List>
   );
