@@ -29,7 +29,7 @@ const PostEdit: FC = () => {
         <ReferenceInput source="userId" reference="users" />
         <TextInput source="title" resettable />
         <TextInput multiline source="body" resettable />
-        <DateInput source="publishedAt" />
+        <DateInput source="published_at" />
         <BooleanInput source="like" disabled />
         <BooleanInput source="dislike" disabled />
       </SimpleForm>
