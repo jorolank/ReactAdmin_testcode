@@ -1,13 +1,13 @@
 {
   "posts": [
     {
-      "like": false,
-      "dislike": true,
+      "like": true,
+      "dislike": false,
       "id": 1,
       "userId": 3,
       "title": "This is title",
       "body": "hello",
-      "published_at": "2022-09-01"
+      "published_at": "2022-09-05"
     },
     {
       "like": false,
@@ -19,13 +19,13 @@
       "published_at": "2022-09-05"
     },
     {
-      "like": true,
-      "dislike": false,
+      "like": false,
+      "dislike": true,
       "id": 3,
       "userId": 3,
       "title": "Helloworld3",
       "body": "23123",
-      "published_at": "2022-09-29"
+      "published_at": "2022-09-05"
     },
     {
       "like": true,

@@ -7,8 +7,6 @@ import {
   DeleteButton,
   useRecordContext,
   ReferenceField,
-  TextInput,
-  ReferenceInput,
   Button,
   useUpdate,
   DateInput,
@@ -24,7 +22,7 @@ const postFilters = [
   <DateInput source={`published_at_lte`}  alwaysOn/>
 ];
 
-const LikeField = ({ source }: any) => {
+const LikeField = ({label} : {label: string}) => {
   const record = useRecordContext();
   const likeObj = {
     like:  !record.like,
@@ -48,14 +46,14 @@ const LikeField = ({ source }: any) => {
   };
 
   return record ? (
-    <Button variant="contained" color="secondary" onClick={handleClick} disabled={isLoading}>
+    <Button variant="contained" color="secondary"  onClick={handleClick} disabled={isLoading}>
         {record.like?.toString()}
     </Button>
   ) : null
 };
 
 
-const CustomEditButton = ({ source }: any) => {
+const CustomEditButton = () => {
   const record = useRecordContext();
   return record ? (
     <EditButton  />
@@ -77,7 +75,7 @@ const PostList: FC = () => {
         <TextField source="body" />
         <DateField locales={'af'}  source="published_at" showTime={false} />
 
-        <LikeField source="like" label="subscription" />
+        <LikeField label="subscription"  />
       
 
         <CustomEditButton   />

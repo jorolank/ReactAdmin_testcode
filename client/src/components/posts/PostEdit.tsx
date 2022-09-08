@@ -6,8 +6,6 @@ import {
   ReferenceInput,
   SimpleForm,
   TextInput,
-  useGetOne,
-  useListParams,
   useRecordContext,
 } from "react-admin";
 import { useParams } from "react-router-dom";
