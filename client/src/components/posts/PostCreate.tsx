@@ -11,8 +11,7 @@ const PostCreate:FC = () =>{
                 <TextInput source="title" /> 
                 <TextInput multiline source="body" /> 
                 <DateInput source="published_at" />
-                <BooleanInput source="like" defaultValue={true} />
-                <BooleanInput source="dislike" />
+                <BooleanInput source="subscription" disabled checked={false} defaultValue={true} />
             </SimpleForm>
         </Create>
     )

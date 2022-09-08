@@ -28,8 +28,8 @@ const PostEdit: FC = () => {
         <TextInput source="title" resettable />
         <TextInput multiline source="body" resettable />
         <DateInput source="published_at" />
-        <BooleanInput source="like" disabled />
-        <BooleanInput source="dislike" disabled />
+
+        <BooleanInput source="subscription" disabled />
       </SimpleForm>
     </Edit>
   );

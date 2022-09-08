@@ -1,74 +1,70 @@
 import { FC } from "react";
+import { TextInput, ReferenceInput } from 'react-admin';
 import {
   List,
   Datagrid,
   TextField,
   EditButton,
-  DeleteButton,
   useRecordContext,
   ReferenceField,
   Button,
   useUpdate,
   DateInput,
   DateField,
-  ReferenceInput,
-  TextInput,
   DeleteWithConfirmButton,
 } from "react-admin";
-
 
 const postFilters = [
   <TextInput source="q" label="Search" alwaysOn />,
   <ReferenceInput source="userId" label="User" reference="users" />,
-  // <DateInput source="published_at" label={'Published'} alwaysOn/>,
-  <DateInput source={`published_at_gte`} label="start"  alwaysOn/>,
-  <DateInput source={`published_at_lte`} label="end" alwaysOn/>
+  // <DateInput source="published_at" label={"Published"} alwaysOn />,
+  <DateInput source={`published_at_gte`} alwaysOn />,
+  <DateInput source={`published_at_lte`} alwaysOn />,
 ];
 
-const LikeField = ({label} : {label: string}) => {
+const SubscriptionField = ({ label }: { label: string }) => {
   const record = useRecordContext();
-  const likeObj = {
-    like:  !record.like,
-    dislike: record.like,
+  const props = {
+    subscription: !record.subscription,
     id: record.id,
     userId: record.userId,
     title: record.title,
     body: record.body,
-    publishedAt: record.publishedAt
+    publishedAt: record.published_at
   };
 
   const [update, { isLoading }] = useUpdate("posts", {
     id: record.id,
-    data: likeObj,
-    previousData: record
+    data: props,
+    previousData: record,
   });
 
   const handleClick = () => {
-
     update();
   };
 
   return record ? (
-    <Button variant="contained" color="secondary"  onClick={handleClick} disabled={isLoading}>
-        {record.like?.toString()}
+    <Button
+      variant="contained"
+      color="secondary"
+      onClick={handleClick}
+      disabled={isLoading}
+    >
+      {record.subscription?.toString()}
     </Button>
-  ) : null
-};
-
-
-const CustomEditButton = () => {
-  const record = useRecordContext();
-  return record ? (
-    <EditButton  />
   ) : null;
 };
 
 
+
 const PostList: FC = () => {
   return (
-    <List  filters={postFilters} 
-    sort={{field: 'publishedAt', order: 'DESC'}}
-    hasCreate>
+    <List
+      filters={postFilters}
+      emptyWhileLoading
+      sort={{ field: "published_at", order: "DESC" }}
+      hasCreate
+    >
       <Datagrid>
         <ReferenceField source="userId" reference="users">
           <TextField source="id" />
@@ -76,13 +72,12 @@ const PostList: FC = () => {
         {/* <TextField source="id" /> */}
         <TextField source="title" />
         <TextField source="body" />
-        <DateField locales={'af'}  source="published_at" showTime={false} />
+        <DateField locales={"af"} source="published_at" showTime={false} />
 
-        <LikeField label="subscription"  />
-      
+        <SubscriptionField label="subscription" />
 
-        <CustomEditButton   />
-        <DeleteWithConfirmButton  />
+        <EditButton />
+        <DeleteWithConfirmButton />
       </Datagrid>
     </List>
   );

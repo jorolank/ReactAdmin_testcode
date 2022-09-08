@@ -1,26 +1,15 @@
 {
   "posts": [
     {
-      "like": true,
-      "dislike": false,
-      "id": 1,
-      "userId": 3,
-      "title": "This is title",
-      "body": "hello",
-      "published_at": "2022-09-05"
-    },
-    {
-      "like": true,
-      "dislike": false,
+      "subscription": true,
       "id": 2,
-      "userId": 2,
-      "title": "Test",
-      "body": "123",
-      "published_at": "2022-09-09"
+      "userId": 3,
+      "title": "Title",
+      "body": "Body",
+      "published_at": "2022-09-28"
     },
     {
-      "like": false,
-      "dislike": true,
+      "subscription": false,
       "id": 3,
       "userId": 3,
       "title": "Helloworld3",
@@ -28,22 +17,12 @@
       "published_at": "2022-09-05"
     },
     {
-      "like": false,
-      "dislike": true,
+      "subscription": false,
       "id": 4,
       "userId": 3,
       "title": "Helloworld",
       "body": "Lorem ipsum dolor sir amit",
       "published_at": "2022-09-07"
-    },
-    {
-      "like": false,
-      "dislike": true,
-      "id": 6,
-      "userId": 2,
-      "title": "fsdf",
-      "body": "dfds",
-        "published_at": "2022-09-28"
     }
   ],
   "users": [

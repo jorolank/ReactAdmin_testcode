@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "json-server --watch db.json --port 5000 --delay 100",
+    "server": "json-server --watch db.json --port 65432 --delay 100",
     "client": "yarn --cwd client dev",
     "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
