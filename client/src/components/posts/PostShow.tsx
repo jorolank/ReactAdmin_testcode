@@ -1,5 +1,6 @@
+import { Button } from '@mui/material';
 import React from 'react'
-import { useGetOne, TextField, Show, SimpleShowLayout, useRecordContext } from 'react-admin';
+import { useGetOne, TextField, Show, SimpleShowLayout, useRecordContext, TopToolbar, EditButton } from 'react-admin';
 
 const PostTitle = () =>{
     const record=  useRecordContext();
@@ -11,10 +12,21 @@ const PostTitle = () =>{
     )
 }
 
+const PostShowActions = () =>{
+    const customAction = () =>{
+        alert(0)
+    }
+    return (<TopToolbar>
+        <EditButton />
+        <Button variant='contained' onClick={customAction}>Custom Action</Button>
+        <p>lorem ipsum</p>
+    </TopToolbar> )
+}
+
 const PostShow = () => {
 
   return (
-    <Show title={<PostTitle />}>
+    <Show title={<PostTitle />} actions={<PostShowActions />}>
         <SimpleShowLayout>
             <TextField source="id" />
             <TextField source="title" />

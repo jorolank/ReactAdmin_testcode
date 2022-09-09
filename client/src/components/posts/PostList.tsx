@@ -67,7 +67,7 @@ const PostList: FC = ({id}: any) => {
       hasCreate
     >
       <Datagrid>
-        <ReferenceField source="userId" reference="users"  textAlign="center" sortable={true} sortBy="posts.userId">
+        <ReferenceField source="userId" reference="users"  textAlign="center" sortable={true}>
           <TextField source="id"  />
         </ReferenceField>
         {/* <TextField source="id" /> */}
