@@ -15,14 +15,6 @@
       "title": "Helloworld3",
       "body": "23123",
       "published_at": "2022-09-05"
-    },
-    {
-      "subscription": false,
-      "id": 4,
-      "userId": 3,
-      "title": "Helloworld",
-      "body": "Lorem ipsum dolor sir amit",
-      "published_at": "2022-09-07"
     }
   ],
   "users": [
