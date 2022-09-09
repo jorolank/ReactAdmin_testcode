@@ -20,6 +20,7 @@ const Dashboard = () =>{
     const storeContext = () =>{
         console.log(store.getItem('help.open',false))
     }
+
     return (
         <Card>
             <CardHeader title="Welcome to the administration" />

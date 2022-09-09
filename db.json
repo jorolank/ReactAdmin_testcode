@@ -6,7 +6,8 @@
       "userId": 4,
       "title": "Title",
       "body": "Body",
-      "published_at": "2022-09-28"
+      "published_at": "2022-09-16",
+      "dislike": false
     },
     {
       "subscription": false,
