@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "subscription": true,
+      "subscription": false,
       "id": 2,
-      "userId": 3,
+      "userId": 4,
       "title": "Title",
       "body": "Body",
       "published_at": "2022-09-28"
@@ -44,7 +44,7 @@
     {
       "id": 4,
       "name": "Lorem Ipsum",
-      "email": "Lorem@gmail.com"
+      "email": "aljun123@gmail.com"
     }
   ]
 }

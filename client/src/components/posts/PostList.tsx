@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { TextInput, ReferenceInput } from 'react-admin';
+import { TextInput, ReferenceInput, ShowButton, useGetOne, WrapperField, FunctionField } from 'react-admin';
 import {
   List,
   Datagrid,
@@ -30,7 +30,7 @@ const SubscriptionField = ({ label }: { label: string }) => {
     userId: record.userId,
     title: record.title,
     body: record.body,
-    publishedAt: record.published_at
+    published_at: record.published_at
   };
 
   const [update, { isLoading }] = useUpdate("posts", {
@@ -57,7 +57,8 @@ const SubscriptionField = ({ label }: { label: string }) => {
 
 
 
-const PostList: FC = () => {
+const PostList: FC = ({id}: any) => {
+  
   return (
     <List
       filters={postFilters}
@@ -66,8 +67,8 @@ const PostList: FC = () => {
       hasCreate
     >
       <Datagrid>
-        <ReferenceField source="userId" reference="users">
-          <TextField source="id" />
+        <ReferenceField source="userId" reference="users"  textAlign="center" sortable={true} sortBy="posts.userId">
+          <TextField source="id"  />
         </ReferenceField>
         {/* <TextField source="id" /> */}
         <TextField source="title" />
@@ -76,8 +77,29 @@ const PostList: FC = () => {
 
         <SubscriptionField label="subscription" />
 
-        <EditButton />
-        <DeleteWithConfirmButton />
+        {/* combine two or more different column */}
+        {/* <WrapperField label="actions">
+          <EditButton />
+          <ShowButton   />
+          <DeleteWithConfirmButton />
+        </WrapperField> */}
+
+        {/* <FunctionField label="Test" render={
+           ()=> (
+            <>
+              <EditButton />
+              <ShowButton   />
+              <DeleteWithConfirmButton />
+            </>
+          )
+        } /> */}
+
+        <>
+              <EditButton variant="outlined" />
+              <ShowButton variant="outlined"   />
+              <DeleteWithConfirmButton variant="outlined" />
+        </>
+        
       </Datagrid>
     </List>
   );

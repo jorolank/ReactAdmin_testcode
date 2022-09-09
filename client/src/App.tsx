@@ -10,19 +10,17 @@ import PostEdit from './components/posts/PostEdit';
 import PostCreate from './components/posts/PostCreate';
 import PostList from './components/posts/PostList';
 import UsersList from './components/users/UsersList';
+import PostShow from './components/posts/PostShow';
 
 /* 
- youtube url: https://www.youtube.com/watch?v=HRmdj-HpJyE
- youtube channel: traversy media
+https://marmelab.com/react-admin/Fields.html
 */
 
 const App: FC = () => {
   const dataProvider = jsonServerProvider('http://127.0.0.1:65432');
   return (
     <Admin authProvider={AuthProvider} dataProvider={dataProvider} dashboard={Dashboard}>
-      {/* <Resource name="posts" list={ListGuesser} /> */}
-      {/* <Resource name="posts" list={PostList} edit={EditGuesser} /> */}
-      <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
+      <Resource name="posts" list={PostList} show={PostShow} edit={PostEdit} create={PostCreate} icon={PostIcon} />
       <Resource name="users" list={UsersList} edit={EditGuesser} recordRepresentation="name" icon={UserIcon} />
     </Admin>
   )

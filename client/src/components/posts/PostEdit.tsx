@@ -30,6 +30,7 @@ const PostEdit: FC = () => {
         <DateInput source="published_at" />
 
         <BooleanInput source="subscription" disabled />
+        <BooleanInput source="dislike" disabled />
       </SimpleForm>
     </Edit>
   );
