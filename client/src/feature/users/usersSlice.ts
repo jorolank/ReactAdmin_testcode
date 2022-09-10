@@ -4,7 +4,9 @@ import axios from 'axios'
 axios.defaults.baseURL = "http://127.0.0.1:65432";
 const namespace = 'users';
 
-
+type props = {
+    users: []
+}
 
 const initialState = {
     users: [],
@@ -40,4 +42,5 @@ const usersSlice = createSlice({
     }
 });
 
+export const getUsers = (state: props) =>state.users;
 export default usersSlice.reducer;
